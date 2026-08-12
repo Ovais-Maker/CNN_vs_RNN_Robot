@@ -581,6 +581,38 @@ Possible future improvements include:
 - Using longer temporal sequences.
 - Performing real-time physical robot experiments.
 
+## Real-Time Camera Demonstration
+
+The trained CNN and CNN-LSTM models were also tested using a live webcam to demonstrate real-time visual path prediction.
+
+The live application displays:
+
+- CNN predicted X and Y coordinates
+- CNN-LSTM predicted X and Y coordinates
+- Predicted movement direction
+- CNN inference latency
+- CNN-LSTM inference latency
+- Real-time FPS
+- Robot coordinate grid
+- Separate visualization of CNN and CNN-LSTM predictions
+
+### Live Camera Result
+
+![Live Robot Path Tracking](results/figures/live_camera_demo.png)
+
+### Example Live Inference
+
+| Metric | CNN | CNN-LSTM |
+|---|---:|---:|
+| X Prediction | -0.0119 | -0.0202 |
+| Y Prediction | 0.0040 | 0.0000 |
+| Direction | LEFT | LEFT |
+| Inference Latency | 46.10 ms | 152.25 ms |
+
+The CNN produced a lower inference latency than the CNN-LSTM model during the CPU-based webcam demonstration. Both models predicted a leftward movement based on their negative X-coordinate predictions.
+
+> **Note:** The webcam demonstration is intended to validate real-time model deployment and visualization. The models were trained using a synthetic dataset, so the camera demonstration should not be interpreted as a validated real-world autonomous robot navigation system.
+
 ---
 
 # Conclusion
@@ -627,6 +659,7 @@ This project is intended for academic and educational use.
 # Author
 
 **Ovais Patel**
+
 Electronics and Computer Science Engineering Student | Software Enthusiast |Machine Learning Enthusiast | Embedded Systems Developer
 
 ⭐ If you found this project interesting, consider starring the repository.
